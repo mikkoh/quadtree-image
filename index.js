@@ -44,9 +44,9 @@ var colourGetter = {
 
 
 
-function quad( sampleOut, imageData, x, y, width, height, totalWidth, totalHeight, test ) {
+function quad( sampleOut, data, x, y, width, height, totalWidth, totalHeight, test ) {
 
-	var continueQuading = test( colourGetter.setup( imageData.data, x, y, width, height, totalWidth, totalHeight ) );
+	var continueQuading = test( colourGetter.setup( data, x, y, width, height, totalWidth, totalHeight ) );
 
 	if( continueQuading ) {
 
@@ -60,10 +60,10 @@ function quad( sampleOut, imageData, x, y, width, height, totalWidth, totalHeigh
 
 		if( halfWidth > 1 || halfHeight > 1 ) {
 
-			quad( sampleOut, imageData, x, y, halfWidth, halfHeight, totalWidth, totalHeight, test );
-			quad( sampleOut, imageData, xHalf, y, halfWidth, halfHeight, totalWidth, totalHeight, test );
-			quad( sampleOut, imageData, x, yHalf, halfWidth, halfHeight, totalWidth, totalHeight, test );
-			quad( sampleOut, imageData, xHalf, yHalf, halfWidth, halfHeight, totalWidth, totalHeight, test );
+			quad( sampleOut, data, x, y, halfWidth, halfHeight, totalWidth, totalHeight, test );
+			quad( sampleOut, data, xHalf, y, halfWidth, halfHeight, totalWidth, totalHeight, test );
+			quad( sampleOut, data, x, yHalf, halfWidth, halfHeight, totalWidth, totalHeight, test );
+			quad( sampleOut, data, xHalf, yHalf, halfWidth, halfHeight, totalWidth, totalHeight, test );
 		} else {
 
 			sampleOut.push( { x: x, y: y, width: width, height: height } );
@@ -75,7 +75,7 @@ function quad( sampleOut, imageData, x, y, width, height, totalWidth, totalHeigh
 }
 
 
-module.exports = function( sampleOut, imageData, width, height, test ) {
+module.exports = function( sampleOut, data, width, height, test ) {
 
-	quad( sampleOut, imageData, 0, 0, width, height, width, height, test );
+	quad( sampleOut, data, 0, 0, width, height, width, height, test );
 };

@@ -1,4 +1,3 @@
-var cg = require( 'canvasgrayscale' );
 var imageareas = require( '../index' );
 
 var canvas = document.createElement( 'canvas' ),
@@ -13,13 +12,12 @@ img.onload = function() {
 	ctx = canvas.getContext( '2d' );
 	ctx.drawImage( img, 0, 0 );
 
-	var imageData = ctx.getImageData( 0, 0, canvas.width, canvas.height );
+	var imageData = ctx.getImageData( 0, 0, canvas.width, canvas.height ),
+		out = [],
+		colour = 0;
 
-	var out = [];
-	var colour = 0;
-
-	// imageareas( out, imageData, canvas.width, canvas.height, require( '../ruleSameColor' ) );
-	imageareas( out, imageData, canvas.width, canvas.height, require( '../ruleColorSides' ) );
+	// imageareas( out, imageData.data, canvas.width, canvas.height, require( '../ruleSameColor' ) );
+	imageareas( out, imageData.data, canvas.width, canvas.height, require( '../ruleColorSides' ) );
 
 	ctx.fillRect( 0, 0, canvas.width, canvas.height );
 
