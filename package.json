@@ -1,0 +1,34 @@
+{
+  "name": "quadtree-image",
+  "version": "0.0.0",
+  "description": "will analyze image data using a passed rule function using a quadtree",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "canvasgrayscale": "~0.0.0",
+    "quantize": "~1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MikkoH/quadtree-image.git"
+  },
+  "keywords": [
+    "quadtree",
+    "canvas",
+    "image",
+    "color",
+    "analyze"
+  ],
+  "author": "Mikko Haapoja <me@mikkoh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MikkoH/quadtree-image/issues"
+  },
+  "homepage": "https://github.com/MikkoH/quadtree-image"
+}
